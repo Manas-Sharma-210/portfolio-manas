@@ -27,7 +27,7 @@ function Contact() {
         <div className="contact-actions">
 
           <a
-            href="mailto:manassharma210@gmail.com"
+            href="mailto:sahay.contact@gmail.com"
             className="contact-card reveal delay-1"
           >
             <span>Email</span>
