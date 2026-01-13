@@ -846,3 +846,79 @@ section {
   color: var(--text-muted);
   outline: none;
 }
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: var(--text-main);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* X animation */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+
+  background: rgba(15, 19, 15, 0.96);
+  backdrop-filter: blur(12px);
+  padding: 2rem 10%;
+
+  border-bottom: 1px solid rgba(143,168,123,0.15);
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.mobile-menu a.active {
+  color: var(--gold-main);
+}
+
+/* =========================
+   RESPONSIVE NAV
+========================= */
+@media (max-width: 768px) {
+  .nav-links.desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+}

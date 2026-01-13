@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 function Navbar() {
   const [active, setActive] = useState("home");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const sectionIds = ["home", "about", "projects", "skills", "contact"];
@@ -10,7 +11,7 @@ function Navbar() {
       .filter(Boolean);
 
     const handleScroll = () => {
-      const scrollY = window.scrollY + 120; // navbar height offset
+      const scrollY = window.scrollY + 120;
       let current = "home";
 
       for (const section of sections) {
@@ -23,38 +24,59 @@ function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // run once on load
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLinkClick = () => {
+    setOpen(false); // close menu after click
+  };
+
   return (
     <nav className="navbar">
       <div className="nav-inner">
-        <span className="nav-logo">Manas' Portfolio</span>
+        <span className="nav-logo">Manas</span>
 
-        <ul className="nav-links">
-          <li className={active === "home" ? "active" : ""}>
-            <a href="#home">Home</a>
-          </li>
-          <li className={active === "about" ? "active" : ""}>
-            <a href="#about">About</a>
-          </li>
-          <li className={active === "projects" ? "active" : ""}>
-            <a href="#projects">Projects</a>
-          </li>
-          <li className={active === "skills" ? "active" : ""}>
-            <a href="#skills">Skills</a>
-          </li>
-          <li className={active === "contact" ? "active" : ""}>
-            <a href="#contact">Contact</a>
-          </li>
+        {/* DESKTOP LINKS */}
+        <ul className="nav-links desktop">
+          {["home", "about", "projects", "skills", "contact"].map((id) => (
+            <li key={id} className={active === id ? "active" : ""}>
+              <a href={`#${id}`}>{id.charAt(0).toUpperCase() + id.slice(1)}</a>
+            </li>
+          ))}
         </ul>
+
+        {/* HAMBURGER */}
+        <button
+          className={`hamburger ${open ? "open" : ""}`}
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      {/* MOBILE MENU */}
+      <div className={`mobile-menu ${open ? "show" : ""}`}>
+        {["home", "about", "projects", "skills", "contact"].map((id) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={active === id ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            {id.charAt(0).toUpperCase() + id.slice(1)}
+          </a>
+        ))}
       </div>
     </nav>
   );
 }
 
 export default Navbar;
+
 
 
