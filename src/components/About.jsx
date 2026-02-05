@@ -16,30 +16,38 @@ function About() {
           <h2>About Me</h2>
 
           <p>
-            I’m a pre-final year <strong>Computer Science student</strong> with a
-            growing interest in how software systems are built, scaled, and made
-            intelligent.
+            I’m a pre-final year <strong>Computer Science student</strong> who
+            enjoys building real software systems—frontends that feel
+            intentional, and backends that do meaningful work.
           </p>
 
           <p>
-            I currently work with{" "}
-            <strong>HTML5, CSS, and React</strong>, and I’m learning{" "}
-            <strong>Node.js</strong> and backend development to understand
-            complete systems beyond the frontend.
+            I work primarily with <strong>React, JavaScript, and CSS</strong>,
+            and I’m actively expanding into backend development using{" "}
+            <strong>FastAPI</strong> and <strong>Node.js</strong>, focusing on
+            how systems are structured, validated, and scaled.
           </p>
 
           <p>
-            My long-term goal is to move deeper into{" "}
-            <strong>Artificial Intelligence</strong> after building strong
-            backend and computer science foundations.
+            I’ve built projects ranging from clean UI-focused applications to
+            more complex systems like <strong>node-based workflow builders</strong>{" "}
+            and <strong>AI-powered knowledge assistants</strong> involving OCR,
+            vector search, and retrieval-augmented generation (RAG).
+          </p>
+
+          <p>
+            I care about writing code that’s readable, modular, and grounded in
+            real-world constraints—whether that’s validating data flows,
+            handling imperfect inputs, or shipping something people can actually
+            use.
           </p>
 
           {/* current focus */}
           <ul className="about-current">
-            <li>Building projects with React</li>
-            <li>Learning backend with Node.js</li>
-            <li>Strengthening CS fundamentals</li>
-            <li>Preparing to explore AI & ML</li>
+            <li>Building real-world projects with React</li>
+            <li>Designing backend APIs with FastAPI & Node.js</li>
+            <li>Working with OCR, vector search, and RAG pipelines</li>
+            <li>Preparing to grow deeper into AI-driven systems</li>
           </ul>
         </div>
       </div>
@@ -48,4 +56,3 @@ function About() {
 }
 
 export default About;
-
