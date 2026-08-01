@@ -5,7 +5,15 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const sectionIds = ["home", "about", "projects", "skills", "contact"];
+    const sectionIds = [
+      "home",
+      "about",
+      "experience",
+      "projects",
+      "skills",
+      "contact",
+    ];
+
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -29,39 +37,72 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when resizing to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleLinkClick = () => {
-    setOpen(false); // close menu after click
+    setOpen(false);
   };
 
   return (
     <nav className="navbar">
       <div className="nav-inner">
-        <span className="nav-logo">Manas</span>
 
-        {/* DESKTOP LINKS */}
+        {/* LOGO */}
+        <a href="#home" className="nav-logo">
+          Manas
+        </a>
+
+        {/* DESKTOP NAVIGATION */}
         <ul className="nav-links desktop">
-          {["home", "about", "projects", "skills", "contact"].map((id) => (
+          {[
+            "home",
+            "about",
+            "experience",
+            "projects",
+            "skills",
+            "contact",
+          ].map((id) => (
             <li key={id} className={active === id ? "active" : ""}>
-              <a href={`#${id}`}>{id.charAt(0).toUpperCase() + id.slice(1)}</a>
+              <a href={`#${id}`}>
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </a>
             </li>
           ))}
         </ul>
 
-        {/* HAMBURGER */}
+        {/* HAMBURGER BUTTON */}
         <button
           className={`hamburger ${open ? "open" : ""}`}
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-label="Toggle navigation menu"
         >
-          <span />
-          <span />
-          <span />
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
 
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${open ? "show" : ""}`}>
-        {["home", "about", "projects", "skills", "contact"].map((id) => (
+        {[
+          "home",
+          "about",
+          "experience",
+          "projects",
+          "skills",
+          "contact",
+        ].map((id) => (
           <a
             key={id}
             href={`#${id}`}
@@ -77,6 +118,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
-

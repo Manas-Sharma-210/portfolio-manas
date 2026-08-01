@@ -16,13 +16,13 @@ function About() {
           <h2>About Me</h2>
 
           <p>
-            I’m a pre-final year <strong>Computer Science student</strong> who
+            I’m a final year <strong>Computer Science student</strong> who
             enjoys building real software systems—frontends that feel
             intentional, and backends that do meaningful work.
           </p>
 
           <p>
-            I work primarily with <strong>React, JavaScript, and CSS</strong>,
+            I work primarily with <strong>Python</strong>,
             and I’m actively expanding into backend development using{" "}
             <strong>FastAPI</strong> and <strong>Node.js</strong>, focusing on
             how systems are structured, validated, and scaled.

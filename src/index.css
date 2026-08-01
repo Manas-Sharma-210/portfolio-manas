@@ -338,6 +338,149 @@ html {
   }
 }
 
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience {
+  background: linear-gradient(
+    180deg,
+    #121712,
+    #101410
+  );
+
+  padding: 7rem 10%;
+}
+
+.experience-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.experience-title {
+  font-size: 2.4rem;
+  color: var(--text-main);
+  margin-bottom: .6rem;
+}
+
+.experience-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.experience-card {
+  background: linear-gradient(
+    160deg,
+    #151a16,
+    #101410
+  );
+
+  padding: 2.5rem;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(143,168,123,.18);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(214,201,140,.05);
+
+  transition: .3s;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 28px 70px rgba(0,0,0,.55),
+    inset 0 0 0 1px rgba(214,201,140,.12);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 2rem;
+
+  gap: 2rem;
+}
+
+.experience-header h3 {
+  font-size: 1.45rem;
+
+  background: linear-gradient(
+    120deg,
+    #f0e6a8,
+    #d6c98c,
+    #b9ab6f
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.experience-header h4 {
+  color: var(--olive-soft);
+  margin-top: .35rem;
+  font-weight: 500;
+}
+
+.experience-date {
+  color: var(--text-muted);
+  font-size: .9rem;
+  white-space: nowrap;
+}
+
+.experience-list {
+  padding-left: 1.2rem;
+}
+
+.experience-list li {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+
+  margin-top: 2rem;
+}
+
+.experience-tags span {
+  padding: .35rem .85rem;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(214,201,140,.18),
+    rgba(143,168,123,.18)
+  );
+
+  color: #e6e1c4;
+
+  border: 1px solid rgba(214,201,140,.35);
+
+  font-size: .8rem;
+}
+
+@media (max-width:768px){
+
+.experience-header{
+flex-direction:column;
+}
+
+.experience-date{
+white-space:normal;
+}
+
+}
+
+
 .projects {
   background: linear-gradient(
     180deg,
@@ -489,6 +632,7 @@ html {
 .btn.primary {
   scroll-margin-top: 80px;
 }
+
 
 /*SKILLS*/
 
@@ -789,8 +933,13 @@ section {
   font-weight: 600;
   letter-spacing: 0.12em;
   color: var(--gold-main);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
+.nav-logo:hover {
+  opacity: 0.8;
+}
 /* LINKS */
 .nav-links {
   list-style: none;
